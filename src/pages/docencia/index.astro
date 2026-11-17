@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { DEPARTAMENTO, url } from '../../consts';
+
+const cursos = ['4º ESO Matemáticas B', '4º ESO Diversificación (ACT)', 'Bachillerato CCSS · PAU', 'Otros'] as const;
+const materiales = (await getCollection('docencia')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Docencia" description="Materiales docentes del Departamento de Matemáticas del IES Gil de Zático.">
+  <p class="dept">{DEPARTAMENTO}</p>
+  <h1>Docencia</h1>
+  <p>Relaciones de ejercicios, apuntes y recursos organizados por curso.</p>
+
+  {cursos.map((curso) => {
+    const lista = materiales.filter((m) => m.data.curso === curso);
+    return lista.length > 0 && (
+      <section>
+        <h2>{curso}</h2>
+        <ul class="cards">
+          {lista.map((m) => (
+            <li class="card">
+              <h3><a href={url(`/docencia/${m.id}/`)}>{m.data.title}</a></h3>
+              <p>{m.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  })}
+</Base>

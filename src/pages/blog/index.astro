@@ -1,0 +1,19 @@
+---
+import { url } from '../../consts';
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Blog" description="Tecnología, programación y aula.">
+  <h1>Blog</h1>
+  <ul class="cards">
+    {posts.map((p) => (
+      <li class="card">
+        <h3><a href={url(`/blog/${p.id}/`)}>{p.data.title}</a></h3>
+        <p>{p.data.description}</p>
+        <p class="muted">{p.data.date.toLocaleDateString('es-ES')}</p>
+      </li>
+    ))}
+  </ul>
+</Base>

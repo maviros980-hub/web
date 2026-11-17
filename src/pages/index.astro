@@ -1,0 +1,29 @@
+---
+import { url } from '../consts';
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+---
+<Base>
+  <h1>Hola, soy Manuel Avilés</h1>
+  <p>
+    Profesor de Matemáticas en secundaria y jefe del Departamento de Matemáticas del IES Gil de Zático
+    (Torreperogil, Jaén). Aquí comparto materiales para mi alumnado y mis proyectos de programación y tecnología.
+  </p>
+
+  <ul class="cards">
+    <li class="card"><h3><a href={url("/docencia/")}>Docencia</a></h3><p>Materiales por curso: 4º ESO, Diversificación y PAU.</p></li>
+    <li class="card"><h3><a href={url("/proyectos/")}>Proyectos</a></h3><p>Herramientas y programas que desarrollo.</p></li>
+    <li class="card"><h3><a href={url("/blog/")}>Blog</a></h3><p>Notas sobre tecnología, programación y aula.</p></li>
+  </ul>
+
+  {posts.length > 0 && (
+    <section>
+      <h2>Últimas entradas</h2>
+      <ul>
+        {posts.map((p) => <li><a href={url(`/blog/${p.id}/`)}>{p.data.title}</a> <span class="muted">· {p.data.date.toLocaleDateString('es-ES')}</span></li>)}
+      </ul>
+    </section>
+  )}
+</Base>

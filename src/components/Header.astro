@@ -1,0 +1,22 @@
+---
+import { NAV, SITE_TITLE, url } from '../consts';
+const path = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), '') || '/';
+---
+<header>
+  <nav>
+    <a class="brand" href={url("/")}>{SITE_TITLE}</a>
+    <ul>
+      {NAV.map(({ href, label }) => (
+        <li><a href={url(href)} aria-current={(href === '/' ? path === '/' : path.startsWith(href)) ? 'page' : undefined}>{label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+<style>
+  header { border-bottom:1px solid var(--border); background:var(--card); }
+  nav { max-width:var(--max); margin:0 auto; padding:.8rem 1.25rem; display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:center; justify-content:space-between; }
+  .brand { font-weight:700; text-decoration:none; color:var(--fg); }
+  ul { display:flex; flex-wrap:wrap; gap:.25rem 1rem; list-style:none; margin:0; padding:0; }
+  ul a { text-decoration:none; color:var(--muted); }
+  ul a[aria-current='page'] { color:var(--accent); font-weight:600; }
+</style>

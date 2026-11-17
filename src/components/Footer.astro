@@ -1,0 +1,9 @@
+---
+import { SITE_TITLE } from '../consts';
+---
+<footer>
+  <p>© {new Date().getFullYear()} {SITE_TITLE} · Hecho con Astro</p>
+</footer>
+<style>
+  footer { border-top:1px solid var(--border); text-align:center; color:var(--muted); font-size:.85rem; padding:1.5rem 1rem; }
+</style>

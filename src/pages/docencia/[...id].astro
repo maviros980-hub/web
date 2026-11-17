@@ -1,0 +1,14 @@
+---
+import { getCollection, render } from 'astro:content';
+import Entrada from '../../layouts/Entrada.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('docencia');
+  return items.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+<Entrada title={item.data.title} description={item.data.description} date={item.data.date} tags={[item.data.curso]} departamento pdf={item.data.pdf}>
+  <Content />
+</Entrada>

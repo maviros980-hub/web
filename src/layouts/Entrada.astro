@@ -1,0 +1,18 @@
+---
+import Base from './Base.astro';
+import { DEPARTAMENTO, url } from '../consts';
+interface Props { title: string; description: string; date: Date; tags?: string[]; departamento?: boolean; pdf?: string; }
+const { title, description, date, tags = [], departamento = false, pdf } = Astro.props;
+---
+<Base title={title} description={description}>
+  <article>
+    {departamento && <p class="dept">{DEPARTAMENTO}</p>}
+    <h1>{title}</h1>
+    <p class="muted">
+      {date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+      {tags.map((t) => <span class="tag">{t}</span>)}
+    </p>
+    {pdf && <p><a href={pdf.startsWith('/') ? url(pdf) : pdf}>Descargar PDF</a></p>}
+    <slot />
+  </article>
+</Base>
