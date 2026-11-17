@@ -1,29 +1,72 @@
 ---
-import { url } from '../consts';
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { url } from '../consts';
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 ---
 <Base>
-  <h1>Hola, soy Manuel Avilés</h1>
-  <p>
-    Profesor de Matemáticas en secundaria y jefe del Departamento de Matemáticas del IES Gil de Zático
-    (Torreperogil, Jaén). Aquí comparto materiales para mi alumnado y mis proyectos de programación y tecnología.
-  </p>
+  <section class="hero" slot="hero">
+    <svg class="curva" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="200" x2="600" y2="200" class="eje" />
+      <line x1="60" y1="0" x2="60" y2="260" class="eje" />
+      <path class="f" d="M0,236 C90,236 120,140 190,120 S300,190 360,120 S470,10 600,26" />
+    </svg>
+    <div class="hero-txt">
+      <h1>Manuel Avilés</h1>
+      <p class="lead">
+        Profesor de Matemáticas y jefe de departamento en el IES Gil de Zático, en Torreperogil.
+        Aquí dejo materiales para mi alumnado y las herramientas que programo para el aula.
+      </p>
+    </div>
+  </section>
 
   <ul class="cards">
-    <li class="card"><h3><a href={url("/docencia/")}>Docencia</a></h3><p>Materiales por curso: 4º ESO, Diversificación y PAU.</p></li>
-    <li class="card"><h3><a href={url("/proyectos/")}>Proyectos</a></h3><p>Herramientas y programas que desarrollo.</p></li>
-    <li class="card"><h3><a href={url("/blog/")}>Blog</a></h3><p>Notas sobre tecnología, programación y aula.</p></li>
+    <li class="card"><h3><a href={url('/docencia/')}>Docencia</a></h3><p>Materiales de 4º ESO, Diversificación y preparación de la PAU.</p></li>
+    <li class="card" data-tono="ocre"><h3><a href={url('/proyectos/')}>Proyectos</a></h3><p>Aplicaciones y utilidades que desarrollo.</p></li>
+    <li class="card" data-tono="azul"><h3><a href={url('/blog/')}>Blog</a></h3><p>Notas sobre tecnología, programación y aula.</p></li>
   </ul>
 
   {posts.length > 0 && (
     <section>
       <h2>Últimas entradas</h2>
-      <ul>
-        {posts.map((p) => <li><a href={url(`/blog/${p.id}/`)}>{p.data.title}</a> <span class="muted">· {p.data.date.toLocaleDateString('es-ES')}</span></li>)}
+      <ul class="posts">
+        {posts.map((p) => (
+          <li>
+            <a href={url(`/blog/${p.id}/`)}>{p.data.title}</a>
+            <time datetime={p.data.date.toISOString()}>{p.data.date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+          </li>
+        ))}
       </ul>
     </section>
   )}
 </Base>
+
+<style>
+  .hero {
+    position: relative; overflow: hidden;
+    background-color: var(--olive-soft);
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+      linear-gradient(rgba(74,107,47,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,107,47,.05) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .curva { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .eje { stroke: var(--olive); stroke-opacity: .35; stroke-width: 1.5; }
+  .f { fill: none; stroke: var(--ochre); stroke-width: 4; stroke-linecap: round; vector-effect: non-scaling-stroke;
+       stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: trazo 1.8s ease-out .2s forwards; }
+  .p { fill: var(--paper); stroke: var(--olive); stroke-width: 3; vector-effect: non-scaling-stroke; }
+  @keyframes trazo { to { stroke-dashoffset: 0; } }
+  .hero-txt { position: relative; max-width: var(--max); margin: 0 auto; padding: 3.5rem 1.25rem 3rem; }
+  .hero h1 { font-size: clamp(2.6rem, 9vw, 4.25rem); font-weight: 800; letter-spacing: -0.03em; color: var(--olive-deep); margin: 0 0 1rem; }
+  .lead { font-size: 1.15rem; max-width: 34rem; margin: 0; background: color-mix(in srgb, var(--paper) 82%, transparent); padding: .6rem .8rem; border-radius: 6px; }
+  @media (prefers-color-scheme: dark) { .hero h1 { color: var(--ink); } }
+  .posts { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .posts li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding: .75rem 0; border-bottom: 1px solid var(--line); }
+  .posts a { font-family: var(--font-head); font-weight: 600; }
+  .posts time { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+  @media (prefers-reduced-motion: reduce) { .f { stroke-dashoffset: 0; } }
+</style>

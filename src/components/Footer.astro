@@ -1,9 +1,12 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, DEPARTAMENTO } from '../consts';
 ---
 <footer>
-  <p>© {new Date().getFullYear()} {SITE_TITLE} · Hecho con Astro</p>
+  <p><strong>{SITE_TITLE}</strong>, {DEPARTAMENTO}</p>
+  <p>Torreperogil y Úbeda (Jaén), {new Date().getFullYear()}</p>
 </footer>
 <style>
-  footer { border-top:1px solid var(--border); text-align:center; color:var(--muted); font-size:.85rem; padding:1.5rem 1rem; }
+  footer { border-top: 4px solid var(--ochre); background: var(--olive-deep); color: #c9d4bd; text-align: center; font-size: .9rem; padding: 1.75rem 1rem; }
+  footer p { margin: .2rem 0; }
+  footer strong { color: #fff; font-family: var(--font-head); }
 </style>

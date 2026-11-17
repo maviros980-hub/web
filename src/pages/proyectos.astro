@@ -24,7 +24,7 @@ const proyectos = [
   <p>Herramientas y experimentos de programación, muchos pensados para el aula.</p>
   <ul class="cards">
     {proyectos.map((p) => (
-      <li class="card">
+      <li class="card" data-tono="ocre">
         <h3>{p.url ? <a href={p.url}>{p.nombre}</a> : p.nombre}</h3>
         <p>{p.descripcion}</p>
         <p>{p.tags.map((t) => <span class="tag">{t}</span>)}</p>

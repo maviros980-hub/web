@@ -9,7 +9,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   <h1>Blog</h1>
   <ul class="cards">
     {posts.map((p) => (
-      <li class="card">
+      <li class="card" data-tono="azul">
         <h3><a href={url(`/blog/${p.id}/`)}>{p.data.title}</a></h3>
         <p>{p.data.description}</p>
         <p class="muted">{p.data.date.toLocaleDateString('es-ES')}</p>

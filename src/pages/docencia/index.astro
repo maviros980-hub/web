@@ -18,7 +18,7 @@ const materiales = (await getCollection('docencia')).sort((a, b) => b.data.date.
         <h2>{curso}</h2>
         <ul class="cards">
           {lista.map((m) => (
-            <li class="card">
+            <li class="card" data-tono={curso.includes('PAU') ? 'azul' : curso.includes('Diversificación') ? 'ocre' : undefined}>
               <h3><a href={url(`/docencia/${m.id}/`)}>{m.data.title}</a></h3>
               <p>{m.data.description}</p>
             </li>
