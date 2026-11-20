@@ -34,6 +34,14 @@ export interface Descarga {
 
 export const DESCARGAS: Descarga[] = [
   {
+    titulo: 'Análisis de funciones · Dossier de preparación PAU',
+    categoria: 'relaciones',
+    curso: '2º Bach. Matemáticas CCSS II · PAU',
+    archivo: '/descargas/relaciones-ejercicios/macs2-analisis-de-funciones-dossier.pdf',
+    descripcion: 'Continuidad y derivabilidad de funciones a trozos, integración y áreas. Resumen, ejemplos y ejercicios tipo PAU.',
+    fecha: '2026-11-20',
+  },
+  {
     titulo: 'Proyecto 1 · ¿Cuánto mide nuestra pista? (portfolio)',
     categoria: 'trabajos',
     curso: '4º ESO Diversificación (ACT)',
