@@ -89,3 +89,6 @@ details summary { cursor: pointer; font-family: var(--font-head); color: var(--o
 details[open] summary { margin-bottom: .5rem; }
 h3 { margin-top: 2rem; }
 article img { max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 1rem 0; background: #fff; }
+.btn-pdf { display: inline-block; font-family: var(--font-head); font-weight: 600; background: var(--ochre); color: #fff; text-decoration: none; padding: .55rem 1rem; border-radius: 8px; }
+.btn-pdf:hover { background: var(--olive); color: #fff; }
+a.tag-pdf { background: var(--ochre-soft); color: var(--ochre); text-decoration: none; }

@@ -21,7 +21,7 @@ const materiales = (await getCollection('docencia')).sort((a, b) => (a.data.orde
             <li class="card" data-tono={curso.includes('PAU') ? 'azul' : curso.includes('Diversificación') ? 'ocre' : undefined}>
               <h3><a href={url(`/docencia/${m.id}/`)}>{m.data.title}</a></h3>
               <p>{m.data.description}</p>
-              {m.data.tipo && <p><span class="tag">{m.data.tipo}</span></p>}
+              {(m.data.tipo || m.data.pdf) && <p>{m.data.tipo && <span class="tag">{m.data.tipo}</span>}{m.data.pdf && <a class="tag tag-pdf" href={url(m.data.pdf)} download>PDF</a>}</p>}
             </li>
           ))}
         </ul>
