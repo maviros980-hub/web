@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Esperanza de vida al nacer en España, 1976-2024" font-family="system-ui, sans-serif" font-size="13">
+<rect width="640" height="360" fill="#ffffff"/>
+<text x="320.0" y="24" text-anchor="middle" font-size="15" font-weight="600" fill="#1e2b26">Esperanza de vida al nacer en España</text>
+<line x1="56" x2="620" y1="312.0" y2="312.0" stroke="#dfe3d6"/>
+<text x="48" y="316.0" text-anchor="end" fill="#5d6b63">72</text>
+<line x1="56" x2="620" y1="273.1" y2="273.1" stroke="#dfe3d6"/>
+<text x="48" y="277.1" text-anchor="end" fill="#5d6b63">74</text>
+<line x1="56" x2="620" y1="234.3" y2="234.3" stroke="#dfe3d6"/>
+<text x="48" y="238.3" text-anchor="end" fill="#5d6b63">76</text>
+<line x1="56" x2="620" y1="195.4" y2="195.4" stroke="#dfe3d6"/>
+<text x="48" y="199.4" text-anchor="end" fill="#5d6b63">78</text>
+<line x1="56" x2="620" y1="156.6" y2="156.6" stroke="#dfe3d6"/>
+<text x="48" y="160.6" text-anchor="end" fill="#5d6b63">80</text>
+<line x1="56" x2="620" y1="117.7" y2="117.7" stroke="#dfe3d6"/>
+<text x="48" y="121.7" text-anchor="end" fill="#5d6b63">82</text>
+<line x1="56" x2="620" y1="78.9" y2="78.9" stroke="#dfe3d6"/>
+<text x="48" y="82.9" text-anchor="end" fill="#5d6b63">84</text>
+<line x1="56" x2="620" y1="40.0" y2="40.0" stroke="#dfe3d6"/>
+<text x="48" y="44.0" text-anchor="end" fill="#5d6b63">86</text>
+<text x="56.0" y="332" text-anchor="middle" fill="#5d6b63">1975</text>
+<text x="168.8" y="332" text-anchor="middle" fill="#5d6b63">1985</text>
+<text x="281.6" y="332" text-anchor="middle" fill="#5d6b63">1995</text>
+<text x="394.4" y="332" text-anchor="middle" fill="#5d6b63">2005</text>
+<text x="507.2" y="332" text-anchor="middle" fill="#5d6b63">2015</text>
+<text x="620.0" y="332" text-anchor="middle" fill="#5d6b63">2025</text>
+<text x="320.0" y="352" text-anchor="middle" fill="#5d6b63">Año</text>
+<text x="16" y="176.0" text-anchor="middle" fill="#5d6b63" transform="rotate(-90 16 176.0)">Años</text>
+<polyline points="67.3,273.1 123.7,240.1 180.1,226.5 225.2,216.8 281.6,193.5 338.0,170.2 394.4,152.7 450.8,115.8 495.9,100.2 563.6,111.9 608.7,78.9" fill="none" stroke="#4a6b2f" stroke-width="3"/>
+<circle cx="67.3" cy="273.1" r="4.5" fill="#b8741a"/>
+<circle cx="123.7" cy="240.1" r="4.5" fill="#b8741a"/>
+<circle cx="180.1" cy="226.5" r="4.5" fill="#b8741a"/>
+<circle cx="225.2" cy="216.8" r="4.5" fill="#b8741a"/>
+<circle cx="281.6" cy="193.5" r="4.5" fill="#b8741a"/>
+<circle cx="338.0" cy="170.2" r="4.5" fill="#b8741a"/>
+<circle cx="394.4" cy="152.7" r="4.5" fill="#b8741a"/>
+<circle cx="450.8" cy="115.8" r="4.5" fill="#b8741a"/>
+<circle cx="495.9" cy="100.2" r="4.5" fill="#b8741a"/>
+<circle cx="563.6" cy="111.9" r="4.5" fill="#b8741a"/>
+<circle cx="608.7" cy="78.9" r="4.5" fill="#b8741a"/>
+</svg>

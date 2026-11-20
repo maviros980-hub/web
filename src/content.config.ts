@@ -19,7 +19,7 @@ const docencia = defineCollection({
     description: z.string(),
     curso: z.enum(['4º ESO Matemáticas B', '4º ESO Diversificación (ACT)', '2º Bach. Matemáticas CCSS II · PAU', 'Otros']),
     date: z.coerce.date(),
-    tipo: z.enum(['Resumen', 'Dossier', 'Informe', 'Ejercicios']).optional(),
+    tipo: z.enum(['Resumen', 'Dossier', 'Informe', 'Ejercicios', 'Proyecto']).optional(),
     orden: z.number().optional(), // para ordenar los temas dentro del curso
     pdf: z.string().optional(), // ruta a un PDF en /public/materiales/
   }),
