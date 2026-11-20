@@ -5,6 +5,7 @@ curso: 4º ESO Diversificación (ACT)
 tipo: Proyecto
 orden: 1
 date: 2026-10-02
+pdf: /materiales/portfolio-cuanto-mide-nuestra-pista.pdf
 ---
 
 *Situación de aprendizaje: medida, medida indirecta y método científico. Portfolio del alumnado, en 5 sesiones.*
