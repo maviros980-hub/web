@@ -78,3 +78,13 @@ code { font-size: .9em; }
 .katex-display { overflow-x: auto; overflow-y: hidden; padding: .9rem .5rem; margin: 1.5rem 0; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--olive); border-radius: 0 8px 8px 0; }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* Tablas y desplegables dentro de los materiales */
+article table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .97rem; display: block; overflow-x: auto; }
+article th, article td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+article th { background: var(--olive-soft); font-family: var(--font-head); font-weight: 600; }
+article tr:nth-child(even) td { background: color-mix(in srgb, var(--surface) 60%, transparent); }
+details { margin: 1.5rem 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: .6rem 1rem; }
+details summary { cursor: pointer; font-family: var(--font-head); color: var(--olive); }
+details[open] summary { margin-bottom: .5rem; }
+h3 { margin-top: 2rem; }

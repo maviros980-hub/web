@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { DEPARTAMENTO, url } from '../../consts';
 
-const cursos = ['4º ESO Matemáticas B', '4º ESO Diversificación (ACT)', 'Bachillerato CCSS · PAU', 'Otros'] as const;
-const materiales = (await getCollection('docencia')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const cursos = ['4º ESO Matemáticas B', '4º ESO Diversificación (ACT)', '2º Bach. Matemáticas CCSS II · PAU', 'Otros'] as const;
+const materiales = (await getCollection('docencia')).sort((a, b) => (a.data.orden ?? 99) - (b.data.orden ?? 99) || b.data.date.valueOf() - a.data.date.valueOf());
 ---
 <Base title="Docencia" description="Materiales docentes del Departamento de Matemáticas del IES Gil de Zático.">
   <p class="dept">{DEPARTAMENTO}</p>
@@ -21,6 +21,7 @@ const materiales = (await getCollection('docencia')).sort((a, b) => b.data.date.
             <li class="card" data-tono={curso.includes('PAU') ? 'azul' : curso.includes('Diversificación') ? 'ocre' : undefined}>
               <h3><a href={url(`/docencia/${m.id}/`)}>{m.data.title}</a></h3>
               <p>{m.data.description}</p>
+              {m.data.tipo && <p><span class="tag">{m.data.tipo}</span></p>}
             </li>
           ))}
         </ul>
