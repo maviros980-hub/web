@@ -5,6 +5,7 @@ curso: 4º ESO Diversificación (ACT)
 tipo: Proyecto
 orden: 2
 date: 2026-11-02
+pdf: /materiales/ficha-natalidad-mortalidad-esperanza-vida.pdf
 ---
 
 *Duración: 2 sesiones. Material: calculadora, regla, lápices de colores (opcional: hoja de cálculo).*
