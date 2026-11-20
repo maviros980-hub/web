@@ -8,6 +8,7 @@ Hecha con [Astro](https://astro.build). Fórmulas con KaTeX (sintaxis LaTeX).
 |---------------------------------|---------------------------------------|
 | Escribir una entrada del blog   | `src/content/blog/*.md`               |
 | Subir un material de docencia   | `src/content/docencia/*.md` (+ PDF en `public/materiales/`, campo `pdf: /materiales/archivo.pdf`) |
+| Subir un PDF a Descargas (relaciones, exámenes, trabajos) | PDF en `public/descargas/<carpeta>/` + una línea en `src/data/descargas.ts` |
 | Añadir un proyecto              | `src/pages/proyectos.astro`           |
 | Cambiar nombre, correo, menú    | `src/consts.ts`                       |
 | Cambiar colores y estilo        | `src/styles/global.css`               |

@@ -6,6 +6,7 @@ export const EMAIL = 'tu-correo@ejemplo.com'; // cámbialo
 export const NAV = [
   { href: '/', label: 'Inicio' },
   { href: '/docencia/', label: 'Docencia' },
+  { href: '/descargas/', label: 'Descargas' },
   { href: '/proyectos/', label: 'Proyectos' },
   { href: '/blog/', label: 'Blog' },
   { href: '/contacto/', label: 'Contacto' },
