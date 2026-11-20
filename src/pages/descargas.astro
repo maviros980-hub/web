@@ -29,10 +29,10 @@ const secciones = CATEGORIAS.map((cat) => ({
   })).filter((g) => g.items.length > 0),
 }));
 ---
-<Base title="Descargas" description="PDF descargables: relaciones de ejercicios, exámenes y trabajos del Departamento de Matemáticas del IES Gil de Zático.">
+<Base title="Descargas" description="PDF descargables: relaciones de ejercicios, resúmenes, exámenes y trabajos del Departamento de Matemáticas del IES Gil de Zático.">
   <p class="dept">{DEPARTAMENTO}</p>
   <h1>Descargas</h1>
-  <p>Relaciones de ejercicios, exámenes y trabajos en PDF, para descargar e imprimir.</p>
+  <p>Relaciones de ejercicios, resúmenes e infografías, exámenes y trabajos en PDF, para descargar e imprimir.</p>
 
   <nav class="saltos" aria-label="Ir a una categoría">
     {secciones.map((s) => <a class="salto" data-tono={s.tono} href={`#${s.id}`}>{s.nombre}</a>)}
@@ -69,9 +69,12 @@ const secciones = CATEGORIAS.map((cat) => ({
 </Base>
 
 <style>
+  :global(:root) { --teja: #a4472f; --teja-soft: #f5e1da; }
+  @media (prefers-color-scheme: dark) { :global(:root) { --teja: #e08a70; --teja-soft: #35211b; } }
   section { --c: var(--olive); --c-soft: var(--olive-soft); scroll-margin-top: 1rem; }
   section[data-tono='azul'] { --c: var(--blue); --c-soft: var(--blue-soft); }
   section[data-tono='ocre'] { --c: var(--ochre); --c-soft: var(--ochre-soft); }
+  section[data-tono='teja'] { --c: var(--teja); --c-soft: var(--teja-soft); }
 
   .saltos { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; }
   .salto {
@@ -81,6 +84,7 @@ const secciones = CATEGORIAS.map((cat) => ({
   }
   .salto[data-tono='azul'] { --c: var(--blue); --c-soft: var(--blue-soft); }
   .salto[data-tono='ocre'] { --c: var(--ochre); --c-soft: var(--ochre-soft); }
+  .salto[data-tono='teja'] { --c: var(--teja); --c-soft: var(--teja-soft); }
   .salto:hover { filter: brightness(.96); color: var(--c); }
 
   section h2 { border-left: 5px solid var(--c); padding-left: .7rem; margin-bottom: .4rem; }

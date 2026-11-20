@@ -1,7 +1,7 @@
 // Lista de PDFs de la página "Descargas".
 //
 // Para añadir uno:
-//   1. Copia el PDF a public/descargas/<carpeta>/ (relaciones-ejercicios, examenes o trabajos).
+//   1. Copia el PDF a public/descargas/<carpeta>/ (relaciones-ejercicios, resumenes, examenes o trabajos).
 //   2. Añade una línea a la lista de abajo.
 //   3. Sube el cambio a "main": la web se publica sola.
 //
@@ -9,6 +9,7 @@
 
 export const CATEGORIAS = [
   { id: 'relaciones', nombre: 'Relaciones de ejercicios', descripcion: 'Colecciones de ejercicios por tema, con soluciones cuando las hay.', tono: 'olivo' },
+  { id: 'resumenes', nombre: 'Resúmenes e Infografías', descripcion: 'Teoría resumida, fórmulas e infografías de repaso, con ejemplos resueltos.', tono: 'teja' },
   { id: 'examenes', nombre: 'Exámenes', descripcion: 'Exámenes de cursos anteriores y modelos para practicar.', tono: 'azul' },
   { id: 'trabajos', nombre: 'Trabajos', descripcion: 'Proyectos, fichas y portfolios para el alumnado.', tono: 'ocre' },
 ] as const;
@@ -35,9 +36,9 @@ export interface Descarga {
 export const DESCARGAS: Descarga[] = [
   {
     titulo: 'Análisis de funciones · Dossier de preparación PAU',
-    categoria: 'relaciones',
+    categoria: 'resumenes',
     curso: '2º Bach. Matemáticas CCSS II · PAU',
-    archivo: '/descargas/relaciones-ejercicios/macs2-analisis-de-funciones-dossier.pdf',
+    archivo: '/descargas/resumenes/macs2-analisis-de-funciones-dossier.pdf',
     descripcion: 'Continuidad y derivabilidad de funciones a trozos, integración y áreas. Resumen, ejemplos y ejercicios tipo PAU.',
     fecha: '2026-11-20',
   },
